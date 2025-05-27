@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "1de1c372-28a1-454e-9a8a-3df505a05da6",
+    "name": "admin",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "dfea555e-dd6f-4236-ac30-c551e10cf656",
+    "name": "Dualie",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+*.jar
+.env
+data/world
+data/logs
+data/crash-reports
+data/.fabric-manifest.json
+data/.modrinth-manifest.json
+data/usercache.json
+data/config/bstats.json
+data/DiscordIntegration-Data/Commands.toml

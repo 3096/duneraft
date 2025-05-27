@@ -1,0 +1,56 @@
+services:
+  mc:
+    container_name: duneraft-mc
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "true"
+      TYPE: "FABRIC"
+      MEMORY: "16G"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      RCON_PORT: "${RCON_PORT}"
+      JVM_OPTS: -Dminecraft.api.env=custom -Dminecraft.api.auth.host=https://dualie.ink/drasl/auth -Dminecraft.api.account.host=https://dualie.ink/drasl/account -Dminecraft.api.session.host=https://dualie.ink/drasl/session -Dminecraft.api.services.host=https://dualie.ink/drasl/services
+      MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
+      MODRINTH_PROJECTS: |
+        fabric-api
+        lithium
+        your-items-are-safe
+        ledger
+        dcintegration:alpha
+        distanthorizons:beta
+    volumes:
+      - ./data:/data
+      # - ./mods:/mods
+    tty: true
+    restart: unless-stopped
+  rcon:
+    container_name: duneraft-rcon
+    image: itzg/rcon-cli
+    depends_on:
+      - mc
+    tty: true
+    entrypoint: ["/rcon-cli", "--host", "mc", "--port", "${RCON_PORT}", "--password", "${RCON_PASSWORD}"]
+    restart: no
+  mokago:
+    container_name: mokago
+    depends_on:
+      - mc
+    image: golang
+    volumes:
+      - ./mokago:/mokago
+      - ./data:/data
+    working_dir: /mokago
+    environment:
+      RCON_ADDR: "mc:${RCON_PORT}"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      MOKAGO_TOKEN: "${MOKAGO_TOKEN}"
+      MOKAGO_WHITELIST_ROLE_ID: "${MOKAGO_WHITELIST_ROLE_ID}"
+      MOKAGO_SUS_ROLE_ID: "${MOKAGO_SUS_ROLE_ID}"
+      MOKAGO_GUILD_ID: "${MOKAGO_GUILD_ID}"
+      MOKAGO_APPLICATION_ID: "${MOKAGO_APPLICATION_ID}"
+      DATA_DIR: "/data"
+    command: |
+      go run main.go
+    restart: unless-stopped
