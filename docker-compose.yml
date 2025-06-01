@@ -18,6 +18,7 @@ services:
         lithium
         your-items-are-safe
         ledger
+        litematica-server-paster
         dcintegration:alpha
         distanthorizons:beta
     volumes:
