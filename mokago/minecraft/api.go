@@ -26,7 +26,7 @@ func formatUUID(uuid string) string {
 }
 
 func GetUUID(username string) (UUIDResponse, error) {
-	url := fmt.Sprintf("https://api.mojang.com/users/profiles/minecraft/%s", username)
+	url := fmt.Sprintf("https://dualie.ink/drasl/users/profiles/minecraft/%s", username)
 	resp, err := http.Get(url)
 	if err != nil {
 		return UUIDResponse{}, err
