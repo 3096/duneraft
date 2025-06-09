@@ -1,6 +1,8 @@
 "use client";
 
-const handleScroll = (id) => {
+import Image from "next/image";
+
+const handleScroll = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -8,158 +10,102 @@ const handleScroll = (id) => {
 };
 
 function DropdownMenu() {
+  const farmDirectoryTable = [
+    [
+      {
+        id: "treeBombMachine",
+        name: "炸树机",
+      },
+      {
+        id: "sandMachine",
+        name: "刷沙机",
+      },
+      {
+        id: "clayMachine",
+        name: "黏土机",
+      },
+      {
+        id: "stoneBombMachine",
+        name: "炸石机",
+      },
+    ],
+    [
+      {
+        id: "simpleFurnaceGroup",
+        name: "简易熔炉组",
+      },
+      {
+        id: "efficientFurnaceGroup",
+        name: "高效熔炉组",
+      },
+      {
+        id: "landVillagerTradingPost",
+        name: "陆地村民交易所",
+      },
+      {
+        id: "skyIslandVillagerTradingPost",
+        name: "空岛村民交易所",
+      },
+    ],
+    [
+      {
+        id: "iceMachine",
+        name: "制冰机",
+      },
+      {
+        id: "squidTower",
+        name: "墨鱼塔",
+      },
+      {
+        id: "landFoodTower",
+        name: "陆地食物塔",
+      },
+      {
+        id: "skyIslandFoodTower",
+        name: "空岛食物塔",
+      },
+    ],
+    [
+      {
+        id: "frogLightMachine",
+        name: "蛙明灯机",
+      },
+      {
+        id: "upgradedTreeBombMachine",
+        name: "升级版炸树机",
+      },
+      {
+        id: "slimeWitchTower",
+        name: "史莱姆/女巫刷怪塔",
+      },
+      {
+        id: "piglinXPTradingTower",
+        name: "猪人经验/猪灵交易塔",
+      },
+    ],
+    [
+      {
+        id: "simpleConcreteGenerator",
+        name: "简易混凝土生成器",
+      },
+    ],
+  ];
   return (
-    <ul className="flex bg-black p-4 rounded h-55 w-250">
-      <ul className="space-y-2">
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("treeBombMachine")}
-            className="px-2 py-2 border border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors duration-200 rounded"
-          >
-            炸树机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("sandMachine")}
-            className="text-white"
-          >
-            刷沙机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("clayMachine")}
-            className="text-white"
-          >
-            黏土机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("stoneBombMachine")}
-            className="text-white"
-          >
-            炸石机
-          </button>
-        </li>
-      </ul>
-
-      <ul className="space-y-2">
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("simpleFurnaceGroup")}
-            className="text-white"
-          >
-            简易熔炉组
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("efficientFurnaceGroup")}
-            className="text-white"
-          >
-            高效熔炉组
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("landVillagerTradingPost")}
-            className="text-white"
-          >
-            陆地村民交易所
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("skyIslandVillagerTradingPost")}
-            className="text-white"
-          >
-            空岛村民交易所
-          </button>
-        </li>
-      </ul>
-
-      <ul className="space-y-2">
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("iceMachine")}
-            className="text-white"
-          >
-            制冰机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("squidTower")}
-            className="text-white"
-          >
-            墨鱼塔
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("landFoodTower")}
-            className="text-white"
-          >
-            陆地食物塔
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("skyIslandFoodTower")}
-            className="text-white"
-          >
-            空岛食物塔
-          </button>
-        </li>
-      </ul>
-
-      <ul className="space-y-2">
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("frogLightMachine")}
-            className="text-white"
-          >
-            蛙明灯机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("upgradedTreeBombMachine")}
-            className="text-white"
-          >
-            升级版炸树机
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("slimeWitchTower")}
-            className="text-white"
-          >
-            史莱姆/女巫刷怪塔
-          </button>
-        </li>
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("piglinXPTradingTower")}
-            className="text-white"
-          >
-            猪人经验/猪灵交易塔
-          </button>
-        </li>
-      </ul>
-
-      <ul className="space-y-2">
-        <li className="px-4 py-2 cursor-pointer">
-          <button
-            onClick={() => handleScroll("simpleConcreteGenerator")}
-            className="text-white"
-          >
-            简易混凝土生成器
-          </button>
-        </li>
-      </ul>
+    <ul className="flex bg-black p-4 rounded w-full ">
+      {farmDirectoryTable.map((group, index) => (
+        <ul className="space-y-2" key={index}>
+          {group.map((item) => (
+            <li className="px-4 py-2 cursor-pointer" key={item.id}>
+              <button
+                onClick={() => handleScroll(item.id)}
+                className="px-2 py-2 border border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors duration-200 rounded"
+              >
+                {item.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      ))}
     </ul>
   );
 }
@@ -169,9 +115,7 @@ export default function RedStonePage() {
     <div>
       {/* Main Content */}
       <div className="ml-0 sm:ml-60 p-8 pt-6 flex flex-col items-start justify-start min-h-screen">
-        <h1 className=" text-3xl font-bold mb-7 text-left ml-5">
-          红石机器汇总
-        </h1>
+        <h1 className=" text-3xl font-bold mb-7 text-left ml-5">红石机器汇总 {"3" + "2"} </h1>
         {/* text-gray-600 mb-6 text-left ml-[2%] bg-gradient-to-r from-[#ffb5c1] via-pink-100 to-[#ffb5c1] p-5 shadow-md bg-opacity-90 rounded-2xl*/}
         <h2 className="mb-4 p-5">
           这里收录了服务器中各类红石机器的导航目录、使用说明和位置指引。
@@ -185,25 +129,32 @@ export default function RedStonePage() {
         <DropdownMenu />
         <hr className="border-t border-gray-600 my-6 w-full" />
         {/* Sample Content */}
-        <div
-          id="treeBombMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="treeBombMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">炸树机</h2>
+          <Image
+            src="/redstone/treeBombMachine.png"
+            alt="炸树机"
+            width={800}
+            height={450}
+            className="rounded-lg mb-4"
+          />
           <p className="text-base text-white mb-8">
-          制作者：
+            制作者：
             <br />
             肚肚（MC ID：dualie）
             <br />
             <br />
             简介：
             <br />
-            这是一台适合大批量收集木材的半自动炸树机。通过骨粉催熟树苗、再用 TNT 自动炸树，轻松搞定一大堆木头。此外还支持挂机操作～<br />
-不过用完千万记得关掉音乐盒，不然它就不是炸树机，而是炸·炸树机了T T
+            这是一台适合大批量收集木材的半自动炸树机。通过骨粉催熟树苗、再用 TNT
+            自动炸树，轻松搞定一大堆木头。此外还支持挂机操作～
+            <br />
+            不过用完千万记得关掉音乐盒，不然它就不是炸树机，而是炸·炸树机了T T
             <br />
             <br />
             坐标：
-            <br />x: -468 y: 65 z: -5（San Tuducisco主城内）
+            <br />
+            x: -468 y: 65 z: -5（San Tuducisco主城内）
             <br />
             <br />
             使用步骤： <br /> 1. 确保左手拿着树苗，右手拿着骨粉。 <br />
@@ -214,198 +165,117 @@ export default function RedStonePage() {
           </p>
         </div>
 
-        <div
-          id="sandMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="sandMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Sand Machine (刷沙机)</h2>
           <p className="text-base text-white mb-8">
-            The Sand Machine automates the collection of sand, providing a
-            steady supply for construction and crafting needs.
+            The Sand Machine automates the collection of sand, providing a steady supply for construction and crafting
+            needs.
           </p>
         </div>
 
-        <div
-          id="clayMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="clayMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Clay Machine (黏土机)</h2>
           <p className="text-base text-white mb-8">
-            The Clay Machine is a highly efficient tool for gathering clay,
-            essential for building and crafting projects.
+            The Clay Machine is a highly efficient tool for gathering clay, essential for building and crafting
+            projects.
           </p>
         </div>
 
-        <div
-          id="stoneBombMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Stone Bomb Machine (炸石机)
-          </h2>
+        <div id="stoneBombMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Stone Bomb Machine (炸石机)</h2>
           <p className="text-base text-white mb-8">
-            The Stone Bomb Machine is perfect for mining large quantities of
-            stone quickly and efficiently.
+            The Stone Bomb Machine is perfect for mining large quantities of stone quickly and efficiently.
           </p>
         </div>
 
-        <div
-          id="simpleFurnaceGroup"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Simple Furnace Group (简易熔炉组)
-          </h2>
+        <div id="simpleFurnaceGroup" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Simple Furnace Group (简易熔炉组)</h2>
           <p className="text-base text-white mb-8">
-            The Simple Furnace Group is a compact and easy-to-use setup for
-            smelting ores and cooking food.
+            The Simple Furnace Group is a compact and easy-to-use setup for smelting ores and cooking food.
           </p>
         </div>
 
-        <div
-          id="efficientFurnaceGroup"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Efficient Furnace Group (高效熔炉组)
-          </h2>
+        <div id="efficientFurnaceGroup" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Efficient Furnace Group (高效熔炉组)</h2>
           <p className="text-base text-white mb-8">
-            The Efficient Furnace Group maximizes smelting speed and fuel
-            efficiency, ideal for large-scale operations.
+            The Efficient Furnace Group maximizes smelting speed and fuel efficiency, ideal for large-scale operations.
           </p>
         </div>
 
-        <div
-          id="landVillagerTradingPost"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Land Villager Trading Post (陆地村民交易所)
-          </h2>
+        <div id="landVillagerTradingPost" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Land Villager Trading Post (陆地村民交易所)</h2>
           <p className="text-base text-white mb-8">
-            The Land Villager Trading Post provides a convenient location for
-            trading with villagers on land.
+            The Land Villager Trading Post provides a convenient location for trading with villagers on land.
           </p>
         </div>
 
-        <div
-          id="skyIslandVillagerTradingPost"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Sky Island Villager Trading Post (空岛村民交易所)
-          </h2>
+        <div id="skyIslandVillagerTradingPost" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Sky Island Villager Trading Post (空岛村民交易所)</h2>
           <p className="text-base text-white mb-8">
-            The Sky Island Villager Trading Post is a unique setup for trading
-            with villagers in sky-based environments.
+            The Sky Island Villager Trading Post is a unique setup for trading with villagers in sky-based environments.
           </p>
         </div>
 
-        <div
-          id="iceMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="iceMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Ice Machine (制冰机)</h2>
           <p className="text-base text-white mb-8">
-            The Ice Machine automates the production of ice blocks, useful for
-            building and cooling systems.
+            The Ice Machine automates the production of ice blocks, useful for building and cooling systems.
           </p>
         </div>
 
-        <div
-          id="squidTower"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="squidTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Squid Tower (墨鱼塔)</h2>
           <p className="text-base text-white mb-8">
-            The Squid Tower is optimized for collecting ink sacs from squids,
-            essential for dye production.
+            The Squid Tower is optimized for collecting ink sacs from squids, essential for dye production.
           </p>
         </div>
 
-        <div
-          id="landFoodTower"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Land Food Tower (陆地食物塔)
-          </h2>
+        <div id="landFoodTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Land Food Tower (陆地食物塔)</h2>
           <p className="text-base text-white mb-8">
-            The Land Food Tower is a reliable source of food production for
-            land-based setups.
+            The Land Food Tower is a reliable source of food production for land-based setups.
           </p>
         </div>
 
-        <div
-          id="skyIslandFoodTower"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Sky Island Food Tower (空岛食物塔)
-          </h2>
+        <div id="skyIslandFoodTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Sky Island Food Tower (空岛食物塔)</h2>
           <p className="text-base text-white mb-8">
-            The Sky Island Food Tower provides efficient food production in
-            sky-based environments.
+            The Sky Island Food Tower provides efficient food production in sky-based environments.
           </p>
         </div>
 
-        <div
-          id="frogLightMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Frog Light Machine (蛙明灯机)
-          </h2>
+        <div id="frogLightMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Frog Light Machine (蛙明灯机)</h2>
           <p className="text-base text-white mb-8">
-            The Frog Light Machine automates the production of frog lights, a
-            decorative and unique light source.
+            The Frog Light Machine automates the production of frog lights, a decorative and unique light source.
           </p>
         </div>
 
-        <div
-          id="upgradedTreeBombMachine"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Upgraded Tree Bomb Machine (升级版炸树机)
-          </h2>
+        <div id="upgradedTreeBombMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Upgraded Tree Bomb Machine (升级版炸树机)</h2>
           <p className="text-base text-white mb-8">
-            The Upgraded Tree Bomb Machine improves upon the original design,
-            offering faster and more efficient tree clearing.
+            The Upgraded Tree Bomb Machine improves upon the original design, offering faster and more efficient tree
+            clearing.
           </p>
         </div>
 
-        <div
-          id="slimeWitchTower"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Slime/Witch Tower (史莱姆/女巫刷怪塔)
-          </h2>
+        <div id="slimeWitchTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Slime/Witch Tower (史莱姆/女巫刷怪塔)</h2>
           <p className="text-base text-white mb-8">
-            The Slime/Witch Tower combines slime and witch farming into one
-            efficient structure, providing valuable resources for crafting and
-            potions.
+            The Slime/Witch Tower combines slime and witch farming into one efficient structure, providing valuable
+            resources for crafting and potions.
           </p>
         </div>
 
-        <div
-          id="piglinXPTradingTower"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
-          <h2 className="text-2xl font-semibold mb-4">
-            Piglin XP/Trading Tower (猪人经验/猪灵交易塔)
-          </h2>
+        <div id="piglinXPTradingTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Piglin XP/Trading Tower (猪人经验/猪灵交易塔)</h2>
           <p className="text-base text-white mb-8">
-            The Piglin XP/Trading Tower is a highly efficient structure designed
-            to maximize experience gain and trading opportunities with Piglins.
+            The Piglin XP/Trading Tower is a highly efficient structure designed to maximize experience gain and trading
+            opportunities with Piglins.
           </p>
         </div>
 
-        <div
-          id="simpleConcreteGenerator"
-          className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto"
-        >
+        <div id="simpleConcreteGenerator" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">简易混凝土生成器</h2>
           <p className="text-base text-white mb-8">
             制作者：
@@ -419,7 +289,8 @@ export default function RedStonePage() {
             <br />
             <br />
             坐标：
-            <br />x: -481 y: 63 z: 7（San Tuducisco主城内）
+            <br />
+            x: -481 y: 63 z: 7（San Tuducisco主城内）
             <br />
             <br />
             使用步骤： <br /> 1. 确保左手拿着混凝土粉末，右手拿着稿子。 <br />
