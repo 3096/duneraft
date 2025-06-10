@@ -114,7 +114,7 @@ export default function RedStonePage() {
   return (
     <div>
       {/* Main Content */}
-      <div className="ml-0 sm:ml-60 p-8 pt-6 flex flex-col items-start justify-start min-h-screen">
+      <div className="ml-0 sm:ml-30 pt-6 flex flex-col items-start justify-start min-h-screen">
         <h1 className=" text-3xl font-bold mb-7 text-left ml-5">红石机器汇总 {"3" + "2"} </h1>
         {/* text-gray-600 mb-6 text-left ml-[2%] bg-gradient-to-r from-[#ffb5c1] via-pink-100 to-[#ffb5c1] p-5 shadow-md bg-opacity-90 rounded-2xl*/}
         <h2 className="mb-4 p-5">
@@ -300,7 +300,7 @@ export default function RedStonePage() {
         </div>
       </div>
 
-      {/* Sidebar */}
+      {/* Sidebar 
       <aside
         id="default-sidebar"
         className="fixed top-0 left-0 z-40 w-44 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-800 dark:bg-gray-800"
@@ -343,7 +343,8 @@ export default function RedStonePage() {
           </ul>
         </div>
       </aside>
-
+      */}
+      
       {/* Scroll to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

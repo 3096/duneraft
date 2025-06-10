@@ -61,7 +61,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Sidebar Toggle Button */}
+      
+      {/* Sidebar Toggle Button 
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
@@ -84,8 +85,8 @@ export default function Home() {
           ></path>
         </svg>
       </button>
-
-      {/* Sidebar */}
+      */}
+      {/* Sidebar 
       <aside
         id="default-sidebar"
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-800 dark:bg-gray-800"
@@ -128,6 +129,7 @@ export default function Home() {
           </ul>
         </div>
       </aside>
+      */}
 
       {/* Main Content */}
       <div className="p-4 sm:ml-64 flex items-center justify-center">
