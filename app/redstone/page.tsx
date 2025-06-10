@@ -88,6 +88,14 @@ function DropdownMenu() {
         id: "simpleConcreteGenerator",
         name: "简易混凝土生成器",
       },
+      {
+        id: "witherKiller",
+        name: "沙雕机",
+      },
+      {
+        id: "raidFarm",
+        name: "袭击塔",
+      },
     ],
   ];
   return (
@@ -166,10 +174,30 @@ export default function RedStonePage() {
         </div>
 
         <div id="sandMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
-          <h2 className="text-2xl font-semibold mb-4">Sand Machine (刷沙机)</h2>
+          <h2 className="text-2xl font-semibold mb-4">End Portal Sand/Concrete Powder Duper (刷沙/混凝土粉末机)</h2>
           <p className="text-base text-white mb-8">
+            制作者：
+            <br />
+            云淼（MC ID：YunMiao）
+            <br />
+            <br />
+            简介：
+            <br />
             The Sand Machine automates the collection of sand, providing a steady supply for construction and crafting
             needs.
+            <br />
+            <br />
+            坐标：
+            <br />
+            地狱 x:  y:  z: 
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
+            <br />
+            
           </p>
         </div>
 
@@ -182,7 +210,7 @@ export default function RedStonePage() {
         </div>
 
         <div id="stoneBombMachine" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
-          <h2 className="text-2xl font-semibold mb-4">Stone Bomb Machine (炸石机)</h2>
+          <h2 className="text-2xl font-semibold mb-4">Cobblestone Farm (刷石机)</h2>
           <p className="text-base text-white mb-8">
             The Stone Bomb Machine is perfect for mining large quantities of stone quickly and efficiently.
           </p>
@@ -196,9 +224,28 @@ export default function RedStonePage() {
         </div>
 
         <div id="efficientFurnaceGroup" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
-          <h2 className="text-2xl font-semibold mb-4">Efficient Furnace Group (高效熔炉组)</h2>
+          <h2 className="text-2xl font-semibold mb-4">67 Furnace Array (67速熔炉组)</h2>
           <p className="text-base text-white mb-8">
+            制作者：
+            <br />
+            云淼（MC ID：YunMiao）
+            <br />
+            <br />
+            简介：
+            <br />
             The Efficient Furnace Group maximizes smelting speed and fuel efficiency, ideal for large-scale operations.
+            <br />
+            <br />
+            坐标：
+            <br />
+            x:  y:  z: （San Tuducisco主城内）
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
+            <br />
           </p>
         </div>
 
@@ -226,7 +273,27 @@ export default function RedStonePage() {
         <div id="squidTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Squid Tower (墨鱼塔)</h2>
           <p className="text-base text-white mb-8">
+            制作者：
+            <br />
+            云淼（MC ID：YunMiao）
+            <br />
+            <br />
+            简介：
+            <br />
             The Squid Tower is optimized for collecting ink sacs from squids, essential for dye production.
+            <br />
+            <br />
+            坐标：
+            <br />
+            地狱 x:  y:  z: 
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
+            <br />
+            
           </p>
         </div>
 
@@ -270,13 +337,33 @@ export default function RedStonePage() {
         <div id="piglinXPTradingTower" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
           <h2 className="text-2xl font-semibold mb-4">Piglin XP/Trading Tower (猪人经验/猪灵交易塔)</h2>
           <p className="text-base text-white mb-8">
+             制作者：
+            <br />
+            云淼（MC ID：YunMiao）
+            <br />
+            <br />
+            简介：
+            <br />
             The Piglin XP/Trading Tower is a highly efficient structure designed to maximize experience gain and trading
             opportunities with Piglins.
+            <br />
+            <br />
+            坐标：
+            <br />
+            地狱 x:  y:  z: 
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
+            <br />
+            
           </p>
         </div>
 
         <div id="simpleConcreteGenerator" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
-          <h2 className="text-2xl font-semibold mb-4">简易混凝土生成器</h2>
+          <h2 className="text-2xl font-semibold mb-4">简易混凝土固化器</h2>
           <p className="text-base text-white mb-8">
             制作者：
             <br />
@@ -285,7 +372,7 @@ export default function RedStonePage() {
             <br />
             简介：
             <br />
-            适合新手使用的简易混凝土生成器。由于设备仅支持手动操作，暂无法实现自动化，因此更适合在需要少量混凝土的时候使用～
+            适合新手使用的简易混凝土固化器。由于设备仅支持手动操作，暂无法实现自动化，因此更适合在需要少量混凝土的时候使用～
             <br />
             <br />
             坐标：
@@ -295,6 +382,62 @@ export default function RedStonePage() {
             <br />
             使用步骤： <br /> 1. 确保左手拿着混凝土粉末，右手拿着稿子。 <br />
             2. 站到指定位置，对准水块，右键放混凝土粉末，左键挖。 <br />
+            <br />
+          </p>
+        </div>
+
+        <div id="witherKiller" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4"> 沙雕机</h2>
+          <p className="text-base text-white mb-8">
+             制作者：
+            <br />
+            Boring（MC ID：AX3344）
+            <br />
+            <br />
+            简介：
+            <br />
+            
+            <br />
+            <br />
+            坐标：
+            <br />
+            末地 x:  y:  z: 
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
+            <br />
+           
+          </p>
+        </div>
+
+        <div id="raidFarm" className="scroll-mt-10 mb-6 w-[70%] ml-[2%] mr-auto">
+          <h2 className="text-2xl font-semibold mb-4">Raid Farm (袭击塔)</h2>
+          <p className="text-base text-white mb-8">
+            制作者：
+            <br />
+            云淼（MC ID：YunMiao）
+            <br />
+            <br />
+            简介：
+            <br />
+            这是一座高效的袭击塔，专门用于刷取村民袭击事件。通过自动化的设计，可以轻松获取大量的经验和战利品。
+            <br />
+            产物：
+            <br />
+            绿宝石、不死图腾、红石粉、萤石粉、火药、木棍、玻璃瓶、蜘蛛眼、糖
+            <br />
+            坐标：
+            <br />
+            x:  y:  z: 
+            <br />
+            <br />
+            使用步骤：
+            <br /> 1. 
+            <br /> 2. 
+            <br />
             <br />
           </p>
         </div>
