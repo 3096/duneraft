@@ -34,7 +34,16 @@ func GetUUID(username string) (UUIDResponse, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return UUIDResponse{}, fmt.Errorf("failed to get UUID: %s", resp.Status)
+		url = fmt.Sprintf("https://api.minecraftservices.com/minecraft/profile/lookup/name/%s", username)
+		mojangResp, err := http.Get(url)
+		if err != nil {
+			return UUIDResponse{}, err
+		}
+		defer mojangResp.Body.Close()
+		if mojangResp.StatusCode != http.StatusOK {
+			return UUIDResponse{}, fmt.Errorf("failed to get UUID from drasl: %s , and mojang: %s", resp.Status, mojangResp.Status)
+		}
+		resp = mojangResp
 	}
 
 	body, err := io.ReadAll(resp.Body)
