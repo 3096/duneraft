@@ -10,6 +10,8 @@ import (
 )
 
 func main() {
+	config.LoadConfig()
+
 	log.Println("rcon server address:", config.RCON_ADDR)
 	rconClient, err := rcon.NewRCONClient(config.RCON_ADDR, config.RCON_PASSWORD)
 	if err != nil {
