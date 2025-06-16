@@ -40,8 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# pocketbase
+pocketbase_bin
+
 *.jar
-.env
 data/world
 data/logs
 data/crash-reports
