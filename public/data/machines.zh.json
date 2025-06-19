@@ -1,0 +1,167 @@
+[
+  {
+    "id": "treeBombMachine",
+    "title": "炸树机",
+    "author": "肚肚(MC ID:dualie)",
+    "description": "这是一台适合大批量收集木材的半自动炸树机。通过骨粉催熟树苗、再用 TNT 自动炸树，轻松搞定一大堆木头。此外还支持挂机操作～不过用完千万记得关掉音乐盒，不然它就不是炸树机，而是炸·炸树机了T T",
+    "location": "x: -468 y: 65 z: -5(San Tuducisco主城内)",
+    "steps": [
+      "确保左手拿着树苗，右手拿着骨粉。",
+      "打开左边的自动补骨粉开关和右边控制TNT的音乐盒。",
+      "站到指定位置，对准泥土块按住右键不放(可挂机使用)。",
+      "走之前别忘了关掉两个开关！"
+    ],
+    "image": "/redstone/treeBombMachine.png"
+  },
+  {
+    "id": "sandMachine",
+    "title": "刷沙机",
+    "author": "云淼(MC ID:YunMiao)",
+    "description": "The Sand Machine automates the collection of sand, providing a steady supply for construction and crafting needs.",
+    "location": "地狱 x: y: z:",
+    "steps": [
+      "1.pixiu test",
+      "2."
+    ],
+    "image": ""
+  },
+  {
+    "id": "clayMachine",
+    "title": "黏土机",
+    "description": "The Clay Machine is a highly efficient tool for gathering clay, essential for building and crafting projects.",
+    "image": ""
+  },
+  {
+    "id": "stoneBombMachine",
+    "title": "炸石机",
+    "description": "The Stone Bomb Machine is perfect for mining large quantities of stone quickly and efficiently.",
+    "image": ""
+  },
+  {
+    "id": "simpleFurnaceGroup",
+    "title": "简易熔炉组",
+    "description": "The Simple Furnace Group is a compact and easy-to-use setup for smelting ores and cooking food.",
+    "image": ""
+  },
+  {
+    "id": "efficientFurnaceGroup",
+    "title": "67速熔炉组",
+    "author": "云淼(MC ID:YunMiao)",
+    "description": "The Efficient Furnace Group maximizes smelting speed and fuel efficiency, ideal for large-scale operations.",
+    "location": "x: y: z: (San Tuducisco主城内)",
+    "steps": [
+      "1.",
+      "2."
+    ],
+    "image": ""
+  },
+  {
+    "id": "landVillagerTradingPost",
+    "title": "陆地村民交易所",
+    "description": "The Land Villager Trading Post provides a convenient location for trading with villagers on land.",
+    "image": ""
+  },
+  {
+    "id": "skyIslandVillagerTradingPost",
+    "title": "空岛村民交易所",
+    "description": "The Sky Island Villager Trading Post is a unique setup for trading with villagers in sky-based environments.",
+    "image": ""
+  },
+  {
+    "id": "iceMachine",
+    "title": "制冰机",
+    "description": "The Ice Machine automates the production of ice blocks, useful for building and cooling systems.",
+    "image": ""
+  },
+  {
+    "id": "squidTower",
+    "title": "墨鱼塔",
+    "author": "云淼(MC ID:YunMiao)",
+    "description": "The Squid Tower is optimized for collecting ink sacs from squids, essential for dye production.",
+    "location": "地狱 x: y: z:",
+    "steps": [
+      "1.",
+      "2."
+    ],
+    "image": ""
+  },
+  {
+    "id": "landFoodTower",
+    "title": "陆地食物塔",
+    "description": "The Land Food Tower is a reliable source of food production for land-based setups.",
+    "image": ""
+  },
+  {
+    "id": "skyIslandFoodTower",
+    "title": "空岛食物塔",
+    "description": "The Sky Island Food Tower provides efficient food production in sky-based environments.",
+    "image": ""
+  },
+  {
+    "id": "frogLightMachine",
+    "title": "蛙明灯机",
+    "description": "The Frog Light Machine automates the production of frog lights, a decorative and unique light source.",
+    "image": ""
+  },
+  {
+    "id": "upgradedTreeBombMachine",
+    "title": "升级版炸树机",
+    "description": "The Upgraded Tree Bomb Machine improves upon the original design, offering faster and more efficient tree clearing.",
+    "image": ""
+  },
+  {
+    "id": "slimeWitchTower",
+    "title": "史莱姆/女巫刷怪塔",
+    "description": "The Slime/Witch Tower combines slime and witch farming into one efficient structure, providing valuable resources for crafting and potions.",
+    "image": ""
+  },
+  {
+    "id": "piglinXPTradingTower",
+    "title": "猪人经验/猪灵交易塔",
+    "author": "云淼(MC ID:YunMiao)",
+    "description": "The Piglin XP/Trading Tower is a highly efficient structure designed to maximize experience gain and trading opportunities with Piglins.",
+    "location": "地狱 x: y: z:",
+    "steps": [
+      "1.",
+      "2."
+    ],
+    "image": ""
+  },
+  {
+    "id": "simpleConcreteGenerator",
+    "title": "简易混凝土固化器",
+    "author": "涂涂(MC ID:Yuushatutu)",
+    "description": "适合新手使用的简易混凝土固化器。由于设备仅支持手动操作，暂无法实现自动化，因此更适合在需要少量混凝土的时候使用～",
+    "location": "x: -481 y: 63 z: 7(San Tuducisco主城内)",
+    "steps": [
+      "确保左手拿着混凝土粉末，右手拿着稿子。",
+      "站到指定位置，对准水块，右键放混凝土粉末，左键挖。"
+    ],
+    "image": ""
+  },
+  {
+    "id": "witherKiller",
+    "title": "沙雕机",
+    "author": "Boring(MC ID:AX3344)",
+    "description": "",
+    "location": "末地 x: y: z:",
+    "steps": [
+      "1.",
+      "2."
+    ],
+    "image": ""
+  },
+  {
+    "id": "raidFarm",
+    "title": "袭击塔",
+    "author": "云淼(MC ID:YunMiao)",
+    "description": "这是一座高效的袭击塔，专门用于刷取村民袭击事件。通过自动化的设计，可以轻松获取大量的经验和战利品。",
+    "location": "x: y: z:",
+    "steps": [
+      "1.",
+      "2."
+    ],
+    "image": "",
+    "products": "绿宝石、不死图腾、红石粉、萤石粉、火药、木棍、玻璃瓶、蜘蛛眼、糖"
+  }
+]
