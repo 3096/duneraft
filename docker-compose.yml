@@ -4,6 +4,7 @@ services:
     image: itzg/minecraft-server
     ports:
       - "25565:25565"
+      - "24454:24454/udp"
     environment:
       VERSION: "1.21.5"
       EULA: "true"
@@ -22,6 +23,7 @@ services:
         litematica-server-paster
         dcintegration:alpha
         distanthorizons:beta
+        simple-voice-chat
     volumes:
       - ./data:/data
       # - ./mods:/mods
