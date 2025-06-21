@@ -6,7 +6,7 @@ services:
       - "25565:25565"
       - "24454:24454/udp"
     environment:
-      VERSION: "1.21.5"
+      VERSION: "1.21.6"
       EULA: "true"
       TYPE: "FABRIC"
       MEMORY: "16G"
@@ -20,13 +20,11 @@ services:
         lithium
         your-items-are-safe
         ledger
-        litematica-server-paster
-        dcintegration:alpha
-        distanthorizons:beta
-        simple-voice-chat
+        carpet
+        simple-voice-chat:beta
     volumes:
       - ./data:/data
-      # - ./mods:/mods
+      - ./mods:/mods
     tty: true
     restart: unless-stopped
   mc-backup-sidecar:
