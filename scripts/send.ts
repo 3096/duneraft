@@ -28,11 +28,11 @@ const MESSAGE_CONTENT = `更新公告
 const ANNOUNCEMENT_EMBED = new EmbedBuilder()
   .setTitle("更新公告")
   .setDescription(
-    "亲爱的群友们\n为了给提供更为优质的游戏体验，我们将于<t:1750495200:F>进行服务器维护。此次为停服维护，维护更新期间，所有群友将无法登录游戏，请您合理安排时间，避免不必要的损失。"
+    "亲爱的群友们\n为了给提供更为优质的游戏体验，我们将于<t:1750624980:R>进行服务器维护。此次为停服维护，维护更新期间，所有群友将无法登录游戏，请您合理安排时间，避免不必要的损失。"
   )
   .setColor(0x00aeff)
   .addFields(
-    { name: "维护时间", value: "<t:1750495200:F> - <t:1750496400:F>" },
+    { name: "维护时间", value: "<t:1750624980:R> - <t:1750625220:R>" },
     { name: "维护方式", value: "全服停机维护" },
     { name: "维护内容", value: "详见公告与更新内容" }
   )
@@ -108,6 +108,22 @@ const CHANGELOG_EMBED2 = new EmbedBuilder()
   })
   .setTimestamp();
 
+const CHANGELOG_EMBED3 = new EmbedBuilder()
+  .setTitle("📝 更新日志")
+  .setDescription("本次更新内容如下：")
+  .setColor(0x43b581)
+  .addFields({
+    name: "🔧 新增 Mod",
+    value:
+      "• 新增 **Servux** mod，让 MiniHUD 等 Mod 能在服务器上显示结构边界。\n" +
+      "（需客户端安装，仅需服务器端部署即可生效）",
+  })
+  .setFooter({
+    text: "感谢大家的支持与反馈，祝游戏愉快！",
+    iconURL: "https://cdn.discordapp.com/icons/1371634383844278395/f1cd3d58c9d580c0de95d7a13d284938.webp",
+  })
+  .setTimestamp();
+
 // Initialize Discord client
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
@@ -117,8 +133,8 @@ client.once("ready", async () => {
     const channel = await client.channels.fetch(CHANNEL_ID);
     if (channel && channel.isTextBased()) {
       await (channel as TextChannel).send({
-        embeds: [ANNOUNCEMENT_EMBED],
-        // embeds: [CHANGELOG_EMBED2],
+        // embeds: [ANNOUNCEMENT_EMBED],
+        embeds: [CHANGELOG_EMBED3],
       });
       console.log("Announcement sent!");
     } else {

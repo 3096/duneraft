@@ -61,7 +61,6 @@ services:
     restart: no
   mokago:
     container_name: mokago
-    user: "3000:3000"
     depends_on:
       mc:
         condition: service_healthy
