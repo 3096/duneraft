@@ -22,6 +22,7 @@ services:
         ledger
         carpet
         simple-voice-chat:beta
+        servux
     volumes:
       - ./data:/data
       - ./mods:/mods
