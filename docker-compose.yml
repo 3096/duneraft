@@ -5,7 +5,10 @@ services:
     ports:
       - "25565:25565"
       - "24454:24454/udp"
+    user: "3000:3000"
     environment:
+      UID: "3000"
+      GID: "3000"
       VERSION: "1.21.6"
       EULA: "true"
       TYPE: "FABRIC"
@@ -29,12 +32,15 @@ services:
     tty: true
     restart: unless-stopped
   mc-backup-sidecar:
+    user: "3000:3000"
     container_name: duneraft-mc-backup-sidecar
     image: itzg/mc-backup
     depends_on:
       mc:
         condition: service_healthy
     environment:
+      UID: "3000"
+      GID: "3000"
       BACKUP_INTERVAL: "24h"
       RCON_HOST: mc
       # since this service waits for mc to be healthy, no initial delay is needed
@@ -55,6 +61,7 @@ services:
     restart: no
   mokago:
     container_name: mokago
+    user: "3000:3000"
     depends_on:
       mc:
         condition: service_healthy
