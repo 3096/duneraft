@@ -1,6 +1,7 @@
-import { signIn } from "@/auth";
+import { auth, signIn } from "@/auth";
 
-export default function SignIn() {
+export default async function SignIn() {
+  const session = await auth();
   return (
     <form
       action={async () => {
@@ -8,6 +9,7 @@ export default function SignIn() {
         await signIn("discord");
       }}
     >
+      <p>you are {session ? "signed in" : "not signed in"}</p>
       <button type="submit">Signin with Discord</button>
     </form>
   );
