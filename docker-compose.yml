@@ -50,6 +50,18 @@ services:
     volumes:
       - ./data:/data:ro
       - ${BACKUP_HOST_PATH}:/backups
+  mc-restore-sidecar:
+    user: "3000:3000"
+    container_name: duneraft-mc-restore-sidecar
+    # Same image as mc, but any base image with bash and tar will work
+    image: itzg/mc-backup
+    restart: "no"
+    entrypoint: restore-tar-backup
+    volumes:
+      # Must be same mount as mc service, needs to be writable
+      - ./data:/data
+      # Must be same mount as backups service, but can be read-only
+      - ${BACKUP_HOST_PATH}:/backups:ro
   rcon:
     container_name: duneraft-rcon
     image: itzg/rcon-cli
