@@ -42,6 +42,7 @@ services:
       UID: "3000"
       GID: "3000"
       BACKUP_INTERVAL: "24h"
+      EXCLUDES: "world/ledger.sqlite,world/data/DistantHorizons.sqlite,world/DIM-1/data/DistantHorizons.sqlite,world/DIM1/data/DistantHorizons.sqlite"
       RCON_HOST: mc
       # since this service waits for mc to be healthy, no initial delay is needed
       INITIAL_DELAY: 0
