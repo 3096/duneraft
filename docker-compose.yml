@@ -5,10 +5,10 @@ services:
     ports:
       - "25565:25565"
       - "24454:24454/udp"
-    user: "3000:3000"
+    user: "${USER_UID-0}:${USER_GID-0}"
     environment:
-      UID: "3000"
-      GID: "3000"
+      UID: "${MC_UID}"
+      GID: "${MC_GID}"
       VERSION: "1.21.6"
       EULA: "true"
       TYPE: "FABRIC"
@@ -32,17 +32,16 @@ services:
     tty: true
     restart: unless-stopped
   mc-backup-sidecar:
-    user: "3000:3000"
+    user: "${USER_UID-0}:${USER_GID-0}"
     container_name: duneraft-mc-backup-sidecar
     image: itzg/mc-backup
     depends_on:
       mc:
         condition: service_healthy
     environment:
-      UID: "3000"
-      GID: "3000"
       BACKUP_INTERVAL: "24h"
       EXCLUDES: "world/ledger.sqlite,world/data/DistantHorizons.sqlite,world/DIM-1/data/DistantHorizons.sqlite,world/DIM1/data/DistantHorizons.sqlite"
+      PRUNE_BACKUPS_DAYS: "-1"  # -1 means no pruning
       RCON_HOST: mc
       # since this service waits for mc to be healthy, no initial delay is needed
       INITIAL_DELAY: 0
@@ -52,7 +51,7 @@ services:
       - ./data:/data:ro
       - ${BACKUP_HOST_PATH}:/backups
   mc-restore-sidecar:
-    user: "3000:3000"
+    user: "${USER_UID-0}:${USER_GID-0}"
     container_name: duneraft-mc-restore-sidecar
     # Same image as mc, but any base image with bash and tar will work
     image: itzg/mc-backup
