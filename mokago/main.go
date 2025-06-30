@@ -6,21 +6,15 @@ import (
 
 	"dualie.ink/duneraft/mokago/config"
 	"dualie.ink/duneraft/mokago/discord"
-	"dualie.ink/duneraft/mokago/rcon"
 )
 
 func main() {
 	config.LoadConfig()
 
 	log.Println("rcon server address:", config.RCON_ADDR)
-	rconClient, err := rcon.NewRCONClient(config.RCON_ADDR, config.RCON_PASSWORD)
-	if err != nil {
-		log.Fatalf("Failed to connect to RCON server: %v", err)
-	}
-	defer rconClient.Close()
 
-	// Start the Discord client
-	err = discord.RunClient(rconClient)
+	// Pass a function to discord.RunClient that creates a new RCON client as needed
+	err := discord.RunClient()
 	if err != nil {
 		log.Fatalf("Failed to start Discord client: %v", err)
 	}

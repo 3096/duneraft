@@ -6,7 +6,6 @@ import (
 	"dualie.ink/duneraft/mokago/config"
 	"dualie.ink/duneraft/mokago/discord/utils"
 	"dualie.ink/duneraft/mokago/minecraft"
-	"dualie.ink/duneraft/mokago/rcon"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -22,7 +21,7 @@ var WhitelistCommand = discordgo.ApplicationCommand{
 		},
 	},
 }
-var WhitelistCommandHandler = func(session *discordgo.Session, interactionCreate *discordgo.InteractionCreate, rcon *rcon.RCONClient) {
+var WhitelistCommandHandler = func(session *discordgo.Session, interactionCreate *discordgo.InteractionCreate) {
 	member := interactionCreate.Member
 
 	hasSusRole := slices.Contains(member.Roles, config.MOKAGO_SUS_ROLE_ID)
@@ -67,7 +66,7 @@ var WhitelistCommandHandler = func(session *discordgo.Session, interactionCreate
 	}
 
 	// Add the user to the whitelist
-	err = minecraft.AddWhitelist(rcon, uuidResponse)
+	err = minecraft.AddWhitelist(uuidResponse)
 	if err != nil {
 		session.InteractionRespond(interactionCreate.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,

@@ -15,7 +15,14 @@ type WhitelistEntry struct {
 	Name string `json:"name"`
 }
 
-func AddWhitelist(rconClient *rcon.RCONClient, uuidResponse UUIDResponse) error {
+func AddWhitelist(uuidResponse UUIDResponse) error {
+	// Create RCON client
+	rconClient, err := rcon.NewRCONClient(config.RCON_ADDR, config.RCON_PASSWORD)
+	if err != nil {
+		return fmt.Errorf("failed to create RCON client: %w", err)
+	}
+	defer rconClient.Close()
+
 	whitelistPath := filepath.Join(config.DATA_DIR, "whitelist.json") // adjust path as needed
 
 	// Read existing whitelist
