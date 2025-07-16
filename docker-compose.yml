@@ -9,7 +9,7 @@ services:
     environment:
       UID: "${MC_UID}"
       GID: "${MC_GID}"
-      VERSION: "1.21.6"
+      VERSION: "1.21.7"
       EULA: "true"
       TYPE: "FABRIC"
       MEMORY: "16G"
@@ -26,6 +26,8 @@ services:
         carpet
         simple-voice-chat:beta
         servux
+        distanthorizons:beta
+        dcintegration:beta
     volumes:
       - ./data:/data
       - ./mods:/mods

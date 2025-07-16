@@ -1,14 +1,14 @@
 import { Client, GatewayIntentBits, TextChannel, EmbedBuilder } from "discord.js";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ path: ".env.send" });
 
 // Use environment variables for sensitive data
 const BOT_TOKEN = process.env.MOKAGO_TOKEN as string;
-// const CHANNEL_ID = "1375653847783051315"; // test channel ID
+const CHANNEL_ID = "1375653847783051315"; // test channel ID
 // const CHANNEL_ID = "1371765854798217249";  // mod channel ID
 // const CHANNEL_ID = "1374576720174125086";  // anouncement channel ID
-const CHANNEL_ID = "1375767533059047494"; // server update channel ID
+// const CHANNEL_ID = "1375767533059047494"; // server update channel ID
 
 // const MESSAGE_CONTENT = "# Do you want to slay the dragon? 🐉\n\n" +
 //     "## 募集全服 大型聚众讨龙活动 就在下周五晚 (西半球)/周六白天 (东半球)！\n\n" +
@@ -25,14 +25,35 @@ const MESSAGE_CONTENT = `更新公告
 开服时间将根据实际情况有可能提前或延后，维护结束后，我们将不为您发放任何维护补偿，感谢您的理解与支持~`;
 
 // Create a fancy embed announcement
+
+function getRoundedTimes(roundTo = 5, offsetMinutes = 5, durationMinutes = 5) {
+  const now = new Date();
+  // Round up to next 5 minutes
+  const ms = roundTo * 60 * 1000;
+  const roundedStart = new Date(Math.ceil(now.getTime() / ms) * ms);
+  // Apply offset
+  roundedStart.setMinutes(roundedStart.getMinutes() + offsetMinutes);
+  // Set seconds and milliseconds to zero
+  roundedStart.setSeconds(0, 0);
+  const roundedEnd = new Date(roundedStart.getTime() + durationMinutes * 60 * 1000);
+
+  // Convert to unix timestamps (seconds)
+  const startTs = Math.floor(roundedStart.getTime() / 1000);
+  const endTs = Math.floor(roundedEnd.getTime() / 1000);
+
+  return { startTs, endTs };
+}
+
+const { startTs, endTs } = getRoundedTimes();
+
 const ANNOUNCEMENT_EMBED = new EmbedBuilder()
   .setTitle("更新公告")
   .setDescription(
-    "亲爱的群友们\n为了给提供更为优质的游戏体验，我们将于<t:1750624980:R>进行服务器维护。此次为停服维护，维护更新期间，所有群友将无法登录游戏，请您合理安排时间，避免不必要的损失。"
+    `亲爱的群友们\n为了给提供更为优质的游戏体验，我们将于<t:${startTs}:f>进行服务器维护。此次为停服维护，维护更新期间，所有群友将无法登录游戏，请您合理安排时间，避免不必要的损失。`
   )
   .setColor(0x00aeff)
   .addFields(
-    { name: "维护时间", value: "<t:1750624980:R> - <t:1750625220:R>" },
+    { name: "维护时间", value: `<t:${startTs}:f> - <t:${endTs}:f>` },
     { name: "维护方式", value: "全服停机维护" },
     { name: "维护内容", value: "详见公告与更新内容" }
   )
@@ -124,6 +145,20 @@ const CHANGELOG_EMBED3 = new EmbedBuilder()
   })
   .setTimestamp();
 
+const CHANGELOG_EMBED4 = new EmbedBuilder()
+  .setTitle("📝 更新日志")
+  .setDescription("本次更新内容如下：")
+  .setColor(0x43b581)
+  .addFields({
+    name: "✨ 版本更新",
+    value: "• 服务器已更新至 **1.21.7** 版本，la la la lava！",
+  })
+  .setFooter({
+    text: "感谢大家的支持与反馈，祝游戏愉快！",
+    iconURL: "https://cdn.discordapp.com/icons/1371634383844278395/f1cd3d58c9d580c0de95d7a13d284938.webp",
+  })
+  .setTimestamp();
+
 // Initialize Discord client
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
@@ -133,8 +168,8 @@ client.once("ready", async () => {
     const channel = await client.channels.fetch(CHANNEL_ID);
     if (channel && channel.isTextBased()) {
       await (channel as TextChannel).send({
-        // embeds: [ANNOUNCEMENT_EMBED],
-        embeds: [CHANGELOG_EMBED3],
+        embeds: [ANNOUNCEMENT_EMBED],
+        // embeds: [CHANGELOG_EMBED4],
       });
       console.log("Announcement sent!");
     } else {
