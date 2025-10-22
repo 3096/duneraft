@@ -9,7 +9,7 @@ services:
     environment:
       UID: "${MC_UID}"
       GID: "${MC_GID}"
-      VERSION: "1.21.7"
+      VERSION: "1.21.10"
       EULA: "true"
       TYPE: "FABRIC"
       MEMORY: "16G"
@@ -23,11 +23,9 @@ services:
         lithium
         your-items-are-safe
         ledger
-        carpet
         simple-voice-chat:beta
         servux
         distanthorizons:beta
-        dcintegration:beta
     volumes:
       - ./data:/data
       - ./mods:/mods
